@@ -1,0 +1,91 @@
+:root {
+  --bt-navy: #0f2942;
+  --bt-teal: #0d9488;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f4f7fa;
+}
+
+.navbar-biotrack {
+  background: linear-gradient(90deg, #0b2239 0%, #143d66 100%);
+}
+
+.asset-card-touch {
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  border-width: 2px;
+}
+
+.asset-card-touch:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+.failsafe-banner {
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 100%);
+  color: #ffffff;
+  border-left: 8px solid #fef08a;
+  animation: pulseBorder 1.8s infinite;
+}
+
+@keyframes pulseBorder {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.45); }
+  50% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+}
+
+.hash-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  word-break: break-all;
+}
+
+/* SmartArt-style COFEPRIS timeline nodes */
+.smartart-node {
+  width: 225px;
+  border-style: solid;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.smartart-node:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.smartart-node-active {
+  background-color: #eef6ff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.2) !important;
+}
+
+/* Printable 2-inch / card maintenance sticker (AD-08) & COFEPRIS full table report */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  #printable-sticker,
+  #printable-sticker *,
+  #printable-audit-report,
+  #printable-audit-report * {
+    visibility: visible !important;
+  }
+  #printable-sticker {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 340px;
+    border: 2px solid #000 !important;
+    padding: 12px !important;
+    background: #fff !important;
+  }
+  #printable-audit-report {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    padding: 12px !important;
+    background: #fff !important;
+  }
+}
